@@ -120,6 +120,16 @@ because the authority travels in the grants rather than in the layout. The
 as "spec authority lives here" has quietly turned a layout into a governance
 boundary, and is defective.
 
+## Posture
+
+This project is public from day one: [CONTRIBUTING.md](CONTRIBUTING.md) says
+where issues and pull requests go across the three repositories and how the
+lockstep pins move; [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) is the
+Contributor Covenant v2.1; [SECURITY.md](SECURITY.md) is the private
+vulnerability-reporting path; [LICENSE](LICENSE) is Apache-2.0. Both legs
+carry their own `LICENSE` and `SECURITY.md` and point back at this
+repository's `CONTRIBUTING.md`/`CODE_OF_CONDUCT.md`.
+
 ## Layout
 
 ```

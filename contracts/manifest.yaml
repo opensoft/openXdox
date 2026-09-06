@@ -1,0 +1,11 @@
+schema_version: 1
+kind: contract-manifest
+
+project: openxdox
+
+# The project has released no contract bundle yet. This stays `none` until a
+# first bundle is cut and recorded in contracts/CHANGELOG.md; entries are
+# added here when it does.
+contract_bundle_version: none
+
+entries: []
