@@ -128,7 +128,9 @@ lockstep pins move; [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) is the
 Contributor Covenant v2.1; [SECURITY.md](SECURITY.md) is the private
 vulnerability-reporting path; [LICENSE](LICENSE) is Apache-2.0. Both legs
 carry their own `LICENSE` and `SECURITY.md` and point back at this
-repository's `CONTRIBUTING.md`/`CODE_OF_CONDUCT.md`.
+repository's `CONTRIBUTING.md`/`CODE_OF_CONDUCT.md`. In all three, the
+`validate` check is a required status check on `main`, enforced by a
+repository ruleset — see [docs/branch-protection.md](docs/branch-protection.md).
 
 ## Layout
 
@@ -154,3 +156,15 @@ Everything under `scripts/`, plus `contracts/repository-naming.yaml` and
 `contracts/shape-pin.yaml`. Edit them upstream, not here — a local edit is
 reported as drift. `AGENTS.md` and `CLAUDE.md` have no row and are this
 project's own.
+
+## Documentation
+
+The doc index for this repository. Everything under `docs/` is listed here,
+and a new document is linked from this table in the same pull request that
+adds it — the xFactory family's standing rule, levelled across all six
+`openDox`/`openXdox` repositories by the OQ-O scaffold pass
+(`opensoft/openxFactory#656`).
+
+| document | what it is |
+|---|---|
+| [docs/branch-protection.md](docs/branch-protection.md) | the repository ruleset that makes `validate` a required status check on `main`, its `evaluate` → `active` history, and the one policy difference between the two families |

@@ -9,3 +9,41 @@ project: openxdox
 contract_bundle_version: none
 
 entries: []
+
+# ===========================================================================
+# CARVE PROVENANCE — the slot, declared before the carve fills it.
+#
+# RULED OQ-I (Brett Heap, `opensoft/openxFactory#656`, 2026-09-09): the
+# MACHINE-READ record of the openDox carve lands HERE, in each assembly root's
+# hand-authored `contracts/manifest.yaml` — the object whose single commit
+# names both legs — as a top-level `carved_from:` mapping. It is one of three
+# records: `carve_commit:` in the pin files is the referent that survives into
+# the tree the gate reads, and `docs/opendox-cutover-runbook.md` is the
+# procedure. There is deliberately NO bare `CARVE_COMMIT` file: the
+# openXwallet carve rejected that by name, and `opensoft/openXwallet`'s own
+# `contracts/manifest.yaml` carries `carved_from: {repository, commit}` as the
+# precedent this widens. "MACHINE-READ" is that precedent's own word, not a
+# truncation of "machine-readable": openXwallet's manifest introduces the key
+# as "The machine-read one of THREE provenance records for the carve."
+#
+# NOTHING IS WRITTEN HERE YET. This file is levelled, not filled: the OQ-O
+# scaffold-levelling pass moves no carved byte. The carve PR adds, at the top
+# level of this file, a mapping of the shape:
+#
+#   carved_from:
+#     repository: opensoft/openxFactory
+#     commit: <the carve commit>
+#     carve_tag: opendox-carve-0
+#     manifest: docs/opendox-carve-manifest.yaml
+#     legs:
+#       code: <row count>
+#       spec: <row count>
+#
+# Read `scripts/validate-manifest.py` before assuming something checks this:
+# it validates `project.yaml` (`kind: project-manifest`), NOT this file, and
+# it is digest-pinned by `contracts/shape-pin.yaml`, so it must not be edited
+# to make it. This file is hand-authored and validated by nothing — adding a
+# key costs nothing and is checked by nothing, which is exactly why the shape
+# it will take is written down here in advance rather than invented under
+# time pressure at the carve.
+# ===========================================================================
