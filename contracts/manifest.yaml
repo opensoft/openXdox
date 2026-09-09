@@ -22,7 +22,9 @@ entries: []
 # procedure. There is deliberately NO bare `CARVE_COMMIT` file: the
 # openXwallet carve rejected that by name, and `opensoft/openXwallet`'s own
 # `contracts/manifest.yaml` carries `carved_from: {repository, commit}` as the
-# precedent this widens.
+# precedent this widens. "MACHINE-READ" is that precedent's own word, not a
+# truncation of "machine-readable": openXwallet's manifest introduces the key
+# as "The machine-read one of THREE provenance records for the carve."
 #
 # NOTHING IS WRITTEN HERE YET. This file is levelled, not filled: the OQ-O
 # scaffold-levelling pass moves no carved byte. The carve PR adds, at the top
