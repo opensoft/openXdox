@@ -31,17 +31,35 @@ product: openDox
 source_repository: opensoft/openDox
 materialization: referenced
 
-commit: "bad2d2ad4c93c2d0cc3ed82ec56de3e5eecbc2fe"
+commit: "49a99df2561bf70e49337c999d79b36836718349"
 revision_kind: commit
 
 digest_algorithm: sha256
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "5acff0af63d262bb2e48f90b5e9c8cafab260d383e5bc2a0c4a30b5e89f25308"
+  tree_sha256: "96655ad2d2b2b70e5d23b613d5f0e73232e39c75069959044b665313f2c76ee4"
 
 # How the digest above was read, so a later reader knows whether it came from
 # a clone on this machine or from the forge's own tree listing.
 digest_source: gh-api-tree-recursive
+
+# RECORD 2 OF THREE for the openDox carve (RULED OQ-I, Brett Heap,
+# `opensoft/openxFactory#656`, 2026-09-09), written when this pin was bumped
+# onto the carved root at runbook § 6 / `split-opendox-two-layer-product`
+# task 4.2. It is the openxFactory commit the carve was TAKEN FROM — the
+# byte-identity referent that survives into the tree the gate reads, because
+# "HEAD" is no referent across a multi-pull-request wave. Precedent:
+# `opensoft/openxFactory`'s own `contracts/openxwallet-pin.yaml`, which
+# carries this key in this position, directly after `digest_source:`.
+#
+# IT BELONGS HERE AND NOT IN THE LEG PINS. `carve_commit:` is reserved for a
+# pin on a WHOLE carved assembly root — this file and openxFactory's future
+# `contracts/openxdox-pin.yaml` — never for `contracts/code-pin.yaml` or
+# `contracts/spec-pin.yaml`, which are ordinary submodule pins on this
+# project's own legs and exist independent of any carve. Record 1 is
+# `carved_from:` in `contracts/manifest.yaml` beside this file; record 3 is
+# openxFactory's `docs/opendox-cutover-runbook.md`, the procedure.
+carve_commit: "b075fd91dc8fced8e1373825ba80220c33536bae"
 
 declared_in: project.yaml
 verify_pin: scripts/validate-manifest.py
