@@ -11,39 +11,70 @@ contract_bundle_version: none
 entries: []
 
 # ===========================================================================
-# CARVE PROVENANCE — the slot, declared before the carve fills it.
+# CARVE PROVENANCE — the slot was declared before the carve, and the carve has
+# FILLED it: `carved_from:` below is the record.
 #
 # RULED OQ-I (Brett Heap, `opensoft/openxFactory#656`, 2026-09-09): the
 # MACHINE-READ record of the openDox carve lands HERE, in each assembly root's
 # hand-authored `contracts/manifest.yaml` — the object whose single commit
 # names both legs — as a top-level `carved_from:` mapping. It is one of three
-# records: `carve_commit:` in the pin files is the referent that survives into
-# the tree the gate reads, and `docs/opendox-cutover-runbook.md` is the
-# procedure. There is deliberately NO bare `CARVE_COMMIT` file: the
+# records. Record 2 is `carve_commit:` in the pin files that pin a WHOLE
+# carved assembly root from downstream, and THIS repository carries one of the
+# two: `contracts/opendox-pin.yaml` (runbook § 4.2), bumped onto openDox's
+# post-carve root by the very same commit that wrote the mapping below — the
+# referent that survives into the tree the gate reads. openxFactory's
+# `contracts/openxdox-pin.yaml` (§ 5.1) is the other, and is not this
+# project's to write. `carve_commit:` is deliberately NOT in this project's
+# own leg pins: neither `contracts/code-pin.yaml` nor `contracts/spec-pin.yaml`
+# defines it, because a leg pin is an ordinary submodule pin that exists
+# independent of any carve, and § 6's Phase-3 checklist moves only their
+# `commit:` and `digests.tree_sha256:`. Record 3 is
+# `docs/opendox-cutover-runbook.md`, the procedure. There is deliberately NO
+# bare `CARVE_COMMIT` file: the
 # openXwallet carve rejected that by name, and `opensoft/openXwallet`'s own
 # `contracts/manifest.yaml` carries `carved_from: {repository, commit}` as the
 # precedent this widens. "MACHINE-READ" is that precedent's own word, not a
 # truncation of "machine-readable": openXwallet's manifest introduces the key
 # as "The machine-read one of THREE provenance records for the carve."
 #
-# NOTHING IS WRITTEN HERE YET. This file is levelled, not filled: the OQ-O
-# scaffold-levelling pass moves no carved byte. The carve PR adds, at the top
-# level of this file, a mapping of the shape:
+# WRITTEN AT PHASE 3 (runbook § 6), by the one commit that also advanced both
+# leg gitlinks and both `contracts/<role>-pin.yaml` files — `code` to the
+# merge of `opensoft/openXdox-code#5` and `spec` to the merge of
+# `opensoft/openXdox-spec#5`, the arrivals of the 92 and 47 rows the carve
+# manifest declares for this project's two legs. Until that commit this file
+# was levelled, not filled: the OQ-O scaffold-levelling pass moved no carved
+# byte, and the shape the carve would write was set down here in advance
+# rather than invented under time pressure at the carve. The mapping below is
+# that shape with its two placeholders resolved.
 #
-#   carved_from:
-#     repository: opensoft/openxFactory
-#     commit: <the carve commit>
-#     carve_tag: opendox-carve-0
-#     manifest: docs/opendox-carve-manifest.yaml
-#     legs:
-#       code: <row count>
-#       spec: <row count>
+# Read `scripts/validate-manifest.py` before assuming something in this
+# repository checks it: that validator reads `project.yaml`
+# (`kind: project-manifest`), NOT this file, and it is digest-pinned by
+# `contracts/shape-pin.yaml`, so it must not be edited to make it. This file
+# is hand-authored and validated by nothing in this tree — adding a key costs
+# nothing and is checked by nothing here. The one piece of running code that
+# reads the record lives in openxFactory, whose
+# `scripts/verify-carve-arrival.py` refuses `arrival-carved-from-mismatch`
+# unless the VALUES at `carved_from.repository` and `carved_from.commit` below
+# equal the carve manifest's own `source_repository` and `carve_commit` values
+# (and `carved_from.carve_tag`, where both name one, its `carve_tag`). NO
+# carve row lands in this assembly root — the manifest declares `opendox_root`
+# and no `openxdox_root` — so this root is addressed by the REPOSITORY IT IS
+# rather than by a `destinations:` key (RULED OQ-L, runbook § 7), and
+# `carved_from:` is the whole of what that mode reads. `--phase` is neither
+# required nor used there, because the mode walks no rows; run from an
+# openxFactory checkout:
 #
-# Read `scripts/validate-manifest.py` before assuming something checks this:
-# it validates `project.yaml` (`kind: project-manifest`), NOT this file, and
-# it is digest-pinned by `contracts/shape-pin.yaml`, so it must not be edited
-# to make it. This file is hand-authored and validated by nothing — adding a
-# key costs nothing and is checked by nothing, which is exactly why the shape
-# it will take is written down here in advance rather than invented under
-# time pressure at the carve.
+#   python3 scripts/verify-carve-arrival.py \
+#       --assembly-root opensoft/openXdox \
+#       --dest-root <this checkout> --source-repo .
 # ===========================================================================
+
+carved_from:
+  repository: opensoft/openxFactory
+  commit: "b075fd91dc8fced8e1373825ba80220c33536bae"
+  carve_tag: opendox-carve-0
+  manifest: docs/opendox-carve-manifest.yaml
+  legs:
+    code: 92
+    spec: 47
