@@ -31,17 +31,50 @@ product: openDox
 source_repository: opensoft/openDox
 materialization: referenced
 
-commit: "49a99df2561bf70e49337c999d79b36836718349"
+commit: "44679fa732780862230c7446a8f7f2e2bb032e88"
 revision_kind: commit
 
 digest_algorithm: sha256
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "96655ad2d2b2b70e5d23b613d5f0e73232e39c75069959044b665313f2c76ee4"
+  tree_sha256: "f7e2c3001365493f87c7c8fda2659cbdb11db9b783dce43e3301d80ba1a4b26c"
 
 # How the digest above was read, so a later reader knows whether it came from
 # a clone on this machine or from the forge's own tree listing.
 digest_source: gh-api-tree-recursive
+
+# PER-FILE `sha256:` / `pinned_by_commit_only:` — the MODIFIED
+# `neutral-product-pin` requirement's "The product digests only part of its
+# release surface" scenario asks for a per-file `sha256` for every artifact
+# openDox's OWN manifest digests per file, and `pinned_by_commit_only:` for
+# the rest. Checked directly at this commit: `opensoft/openDox`
+# `contracts/manifest.yaml` carries `contract_bundle_version: none` and
+# `entries: []` — openDox has published no contract bundle, so that set is
+# EMPTY. This is the identical fact `scripts/verify-openxdox-pin.py`
+# (openxFactory's own pin of openXdox, one link up this same chain) found for
+# ITS upstream and resolved the same way: "the whole-tree digest... discharges
+# the completeness obligation those two lists exist to serve, and discharges
+# it more strongly... ONE digest addresses EVERY byte inside it, so no member
+# can be undeclared and none can be added or altered without changing the
+# referent." Neither list is added here for that reason — a HAND ACT judgment
+# recorded for review, not a silent omission. Revisit at the first commit
+# where openDox's own `contracts/manifest.yaml` carries a non-empty `entries:`
+# row: that artifact then moves into a `files:` list here.
+
+# MIGRATION DECLARATION — MODIFIED `neutral-product-pin` requirement, "A pin
+# bump crosses a migration" scenario (`split-opendox-two-layer-product`
+# design.md § D4 / task 4.2). RULED ASK-1 (Brett Heap,
+# `opensoft/openxFactory#656` comment 5628886636, 2026-09-11): the three
+# fields below are added NOW with an explicit `not_yet_deployed` sentinel,
+# proving the schema shape before a real migration exists to fill it —
+# RULING Q2's FastAPI+Postgres runtime is itself unbuilt and
+# `opensoft/openDox-code` carries no migrations directory yet (checked at
+# `da8aae96`, the commit this root's own `code` pin currently names). Update
+# these at the FIRST real migration a bump of this pin crosses, not before.
+migration:
+  range: not_yet_deployed
+  reversible: not_yet_deployed
+  runbook: not_yet_deployed
 
 # RECORD 2 OF THREE for the openDox carve (RULED OQ-I, Brett Heap,
 # `opensoft/openxFactory#656`, 2026-09-09), written when this pin was bumped
