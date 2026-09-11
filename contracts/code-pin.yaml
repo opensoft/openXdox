@@ -21,7 +21,7 @@ leg_role: code
 source_repository: opensoft/openXdox-code
 submodule_path: code
 
-commit: "5da58ee2e54e5988baff235a06437616ee74a554"
+commit: "5333b125dc0f2dd9ee6f6e558c758fbfe6c49b4d"
 revision_kind: commit
 
 digest_algorithm: sha256
@@ -36,7 +36,7 @@ digest_algorithm: sha256
 # <oid>`, so a leg's own pin moving is drift too.
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "fbdb5fd4be0a5fe760bcef453045f3a41251188ecb861cf9899c698688966882"
+  tree_sha256: "169e5dd9aab1e5835d39da6e1df98fcbdbebf3d01ea4da290751764457c22121"
 
 verify_pin: scripts/validate-pins.py
 resync_runbook: "README.md#the-lockstep-invariant"
