@@ -31,17 +31,17 @@ product: openDox
 source_repository: opensoft/openDox
 materialization: referenced
 
-commit: "8ec3036ce496a90a3c92a89c4907e57941901b51"
+commit: "7cf6c143e65e0bde799a5135dfde2dd66df5d495"
 revision_kind: commit
 
 digest_algorithm: sha256
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "71b97c8bec10f1e85f6d56be52b7a83966232d7591952ad5e0af7db68192b392"
+  tree_sha256: "46f49679e721e1d6c0d43c1aad370feec34c56bc5bbb2fffc88fa680734ecbc8"
 
 # How the digest above was read, so a later reader knows whether it came from
 # a clone on this machine or from the forge's own tree listing.
-digest_source: gh-api-tree-recursive
+digest_source: local-checkout
 
 # PER-FILE `sha256:` / `pinned_by_commit_only:` — the MODIFIED
 # `neutral-product-pin` requirement's "The product digests only part of its
