@@ -31,13 +31,13 @@ product: openDox
 source_repository: opensoft/openDox
 materialization: referenced
 
-commit: "3819625e103ea6960d99cd98454d3b3aa43d8d52"
+commit: "c4c5014d9b39ac55e5df957db23a56db38847a6b"
 revision_kind: commit
 
 digest_algorithm: sha256
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "40c6216ce9b4f8d4d78b23046d1da6c6de6103143c2d2c0d7afe0a2ce6ee0fce"
+  tree_sha256: "f7b9b0236ae6afabcb2692abb3f7e084053ea67babf450222efff7452cac51f6"
 
 # How the digest above was read, so a later reader knows whether it came from
 # a clone on this machine or from the forge's own tree listing.
