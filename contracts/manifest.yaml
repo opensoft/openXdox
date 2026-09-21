@@ -76,14 +76,31 @@ contract_bundle_version: xdox-v1.0
 #
 # WHAT THIS BUNDLE DEPENDS ON, STATED BECAUSE IT IS NOT OBVIOUS. openXdox is a
 # domain descendant of openDox and pins it at `contracts/opendox-pin.yaml`,
-# commit c4c5014d9b39ac55e5df957db23a56db38847a6b. That is one openDox ROOT
-# behind openDox's current main (d05e204e…), so `xdox-v1.0` composes over
-# `c4c5014d` and NOT over the openDox root that `dox-v1.0` tags. Advancing that
-# pin is a THREE-repository lockstep (openxFactory's `openDox` gitlink,
-# openxFactory's `contracts/opendox-pin.yaml`, and this file's sibling
+# commit dc7aa08fe48c8d17b596b0daa1ce87cdc0472aca — the commit `dox-v1.0`
+# tags. THAT PIN IS ADVANCED AT THIS COMMIT, on the forced order the holder set
+# (`opensoft/openxFactory#656` comment 5767733963) and RULED 5767804734 item 5:
+# openXdox root pin, then openxFactory's nested legs, then the aggregation
+# sync. Until this commit it stood at c4c5014d9b39ac55e5df957db23a56db38847a6b,
+# one openDox ROOT behind openDox's main, and this paragraph's earlier closing
+# sentence — "registered on `#656`, not taken here. No pin moves in this
+# commit." — was true of every commit up to this one. It is kept here as the
+# history of why the pin sat where it did, not deleted.
+#
+# THE TAG IS UNCHANGED AND STILL COMPOSES OVER THE OLD ROOT. `xdox-v1.0` is the
+# historical first cut over `2073e3a9`, which pins openDox `c4c5014d`, and RULED
+# 5767804734 item 5 leaves it exactly where it was cut — no re-cut. So
+# `xdox-v1.0` composes over `c4c5014d` and NOT over the openDox root that
+# `dox-v1.0` tags; it is `main`, from this commit forward, that composes over
+# `dc7aa08f`. Those two statements are about different objects and both hold.
+#
+# ADVANCING THIS PIN IS A THREE-REPOSITORY LOCKSTEP, AND ONLY ONE LEG OF IT IS
+# TAKEN HERE: openxFactory's `openDox` gitlink, openxFactory's
+# `contracts/opendox-pin.yaml`, and this file's sibling
 # `contracts/opendox-pin.yaml`, which `verify-opendox-pin.py` check 5 reads as a
-# BLOB at whatever commit openxFactory's `openXdox` gitlink names) and is
-# registered on `#656`, not taken here. No pin moves in this commit.
+# BLOB at whatever commit openxFactory's `openXdox` gitlink names. This commit
+# moves the THIRD only. openxFactory's `openXdox` gitlink still records
+# `88a1047e`, so check 5 goes on reading the OLD blob and openxFactory stays in
+# agreement with itself until its own two legs advance together.
 # ===========================================================================
 
 entries:
