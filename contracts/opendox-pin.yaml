@@ -31,13 +31,13 @@ product: openDox
 source_repository: opensoft/openDox
 materialization: referenced
 
-commit: "c4c5014d9b39ac55e5df957db23a56db38847a6b"
+commit: "dc7aa08fe48c8d17b596b0daa1ce87cdc0472aca"
 revision_kind: commit
 
 digest_algorithm: sha256
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "f7b9b0236ae6afabcb2692abb3f7e084053ea67babf450222efff7452cac51f6"
+  tree_sha256: "adc049c973298e44064187aa91cd5c987aec1b911ebb8dea607648c9ae7f7cee"
 
 # How the digest above was read, so a later reader knows whether it came from
 # a clone on this machine or from the forge's own tree listing.
@@ -71,10 +71,34 @@ digest_source: local-checkout
 # `opensoft/openDox-code` carries no migrations directory yet (checked at
 # `da8aae96`, the commit this root's own `code` pin currently names). Update
 # these at the FIRST real migration a bump of this pin crosses, not before.
+#
+# FILLED AT THIS BUMP (2026-09-21) — that test is now MET, and the sentinel
+# above is kept as the history of why it stood. This pin advanced `c4c5014d`
+# -> `dc7aa08f` (the commit `dox-v1.0` tags), carrying openDox's `code` leg
+# `0b4e8bbf` -> `d816cf06`, across which paths matching `migration` go from
+# ZERO to SIX -- among them `migrations/0001_identity_and_coordination.sql`
+# and `migrations/0002_migration_state.sql`. So this bump IS the first real
+# migration this pin crosses, and the three fields are filled by measurement
+# rather than left asserting something the same commit falsifies.
+# `range` follows the ledger's own `<version>_<name>`; the SPELLING
+# `0001..0002` was chosen by the holder, none being specified anywhere.
+# `reversible: false` is openDox's own statement, not an inference --
+# `0002_migration_state.sql` reads "openDox ships no down migration today",
+# its ledger column is `reversible boolean not null default false`, and
+# neither migration carries a down or rollback statement. `runbook` records an
+# ABSENCE honestly: no migration runbook exists in any repository of this
+# estate (`openxFactory/docs/opendox-cutover-runbook.md` is the CARVE arc and
+# does not cover the database). NOTHING READS THESE THREE FIELDS -- `migration`
+# occurs 0 times in this repository's `scripts/validate-pins.py` and 0 times in
+# openxFactory's `scripts/verify-opendox-pin.py` -- so any value passes green,
+# which is exactly why it must be the honest one. Claimed at
+# `opensoft/openxFactory#656` comment 5767868394 and decided at 5767868616;
+# openxFactory's own direct `contracts/opendox-pin.yaml` carries the identical
+# triple and takes these IDENTICAL values when its nested legs advance.
 migration:
-  range: not_yet_deployed
-  reversible: not_yet_deployed
-  runbook: not_yet_deployed
+  range: "0001..0002"
+  reversible: false
+  runbook: "none exists as of 2026-09-21 - no migration runbook in any estate repository; the openDox BUILD arc owes it; registered openxFactory#656 5767868616"
 
 # RECORD 2 OF THREE for the openDox carve (RULED OQ-I, Brett Heap,
 # `opensoft/openxFactory#656`, 2026-09-09), written when this pin was bumped
