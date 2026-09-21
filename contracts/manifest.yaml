@@ -3,12 +3,154 @@ kind: contract-manifest
 
 project: openxdox
 
-# The project has released no contract bundle yet. This stays `none` until a
-# first bundle is cut and recorded in contracts/CHANGELOG.md; entries are
-# added here when it does.
-contract_bundle_version: none
+# THE FIRST BUNDLE. `contract_bundle_version` stood at `none` with `entries: []`
+# from the 2026-09-06 bootstrap until this commit — the honest state of a project
+# that had released nothing. `xdox-v1.0` is cut under RULED (a), Brett Heap
+# 2026-09-21, `opensoft/openxFactory` issue #656 comment 5767052465: "(a) for
+# both, cut the tags when the drafts are green." The annotated tag over the
+# commit that names both legs plus these entries is the operator's act (runbook
+# § 9 Phase 6, "BRETT'S ACT, ALWAYS"); this file is the entry beside it and makes
+# no tag.
+contract_bundle_version: xdox-v1.0
 
-entries: []
+# ===========================================================================
+# WHAT AN ENTRY IS, AND WHERE EVERY FIELD CAME FROM.
+#
+# NOTHING IN THIS TREE VALIDATES THIS FILE — see the carve-provenance note
+# below, which predates this bundle and is still true:
+# `scripts/validate-manifest.py` reads `project.yaml`
+# (`kind: project-manifest`), NOT this file. So the shape below is not read off
+# a schema, because there is none; every field is lifted from a family artifact
+# that already answers the same question:
+#
+#   `id`, `path`, the leg `repository`, the leg `commit`, `sha256`
+#       the five columns of openxFactory's OWN contract-v4.0 relocation table
+#       ("manifest `id` | path it held | canonical home | leg commit | `sha256`,
+#       unchanged") — the table that shed three of the rows below INTO this
+#       project.
+#   `type`, `contract_schema_version`, `release_member`
+#       openxFactory's `contracts/hermes-runtime/contract-index.yaml` row
+#       fields, unchanged in spelling.
+#
+# THE ONE NEW THING is that a row addresses a file in a PINNED SUBMODULE rather
+# than in this tree. That is what a three-repository project's bundle IS: the
+# root holds no contract bytes of its own and a consumer's pin points here, so
+# the bundle can only be the legs at the commits `contracts/spec-pin.yaml` and
+# `contracts/code-pin.yaml` name. Each `commit:` below is EXACTLY the value in
+# those pin files — if they disagree, the pin files are right and this is stale.
+#
+# THE KEY IS `entries:` AND IS NOT BEING RENAMED. `opensoft/openXwallet` uses
+# `contracts:` and `kind: contract_manifest`; openxFactory uses `contracts:` and
+# no `kind:` at all; this project declared `entries:` and
+# `kind: contract-manifest` at bootstrap. openXwallet's own manifest states the
+# rule that settles it — "Machine keys do NOT move in v1 (R2, LOCKED) … a
+# rename inside the move is unbisectable" — and a first release is the worst
+# moment to rename the key a consumer would pin. The three-way divergence is
+# registered on `#656` (comment 5767092136) for a later ruling, not decided here.
+#
+# RELEASE-SURFACE SELECTION RULE, declared rather than inferred, on
+# openXwallet's precedent ("wallet-vN.M.digests.yaml selects { row |
+# row.member_class == "owned" }"):
+#
+#     xdox-vN.M  selects  { entry | entry.release_member == true }
+#
+# Selection is by DECLARED FIELD, never by a `contracts/schemas/` path
+# heuristic — which would break on the very list below, where one member and
+# four non-members share that directory. AND MEMBERSHIP IS NOT THIS PROJECT'S TO
+# ASSERT: openxFactory's contract-v4.0 entry rules that "inventory membership is
+# catalog-driven from `contracts/hermes-runtime/contract-index.yaml`, not from
+# `manifest.yaml`", naming `gate-action-record` as a member that STAYS a member
+# and saying of the other two shed here that "`ideation-dashboard-snapshot` and
+# `ideation-dashboard-snapshot-index` were never catalog members and are in no
+# inventory". `domain-profile` is likewise absent from that catalog's 51 rows.
+# Every `release_member:` below is therefore a measurement, not a judgement.
+#
+# `adapter_owner:` and `intended_consumers:` are deliberately ABSENT. Nothing in
+# this tree reads them and a first bundle carrying fields no reader consumes is
+# decoration; either is one additive line the day a consumer needs it.
+#
+# THE CODE LEG CONTRIBUTES NO ENTRY. `opensoft/openXdox-code` at
+# ab04453de25b5c93479a5a6ff3700aec02f6e2b3 carries no `contracts/` path at all
+# (measured with `git ls-tree -r`), so its absence from the list is a fact about
+# that leg and not an omission.
+#
+# WHAT THIS BUNDLE DEPENDS ON, STATED BECAUSE IT IS NOT OBVIOUS. openXdox is a
+# domain descendant of openDox and pins it at `contracts/opendox-pin.yaml`,
+# commit c4c5014d9b39ac55e5df957db23a56db38847a6b. That is one openDox ROOT
+# behind openDox's current main (d05e204e…), so `xdox-v1.0` composes over
+# `c4c5014d` and NOT over the openDox root that `dox-v1.0` tags. Advancing that
+# pin is a THREE-repository lockstep (openxFactory's `openDox` gitlink,
+# openxFactory's `contracts/opendox-pin.yaml`, and this file's sibling
+# `contracts/opendox-pin.yaml`, which `verify-opendox-pin.py` check 5 reads as a
+# BLOB at whatever commit openxFactory's `openXdox` gitlink names) and is
+# registered on `#656`, not taken here. No pin moves in this commit.
+# ===========================================================================
+
+entries:
+  # ---- openxFactory catalog release member, consumed at this pin ----
+  # Carries at this commit EXACTLY the sha256 openxFactory recorded at
+  # contract-v3.7 and re-asserted at contract-v4.0, and it is byte-unchanged
+  # from 481a07f9 (the leg commit that table names) to f088b097 — recomputed
+  # here from the pinned leg's own object store, not copied from that table.
+  - id: gate-action-record
+    leg: spec
+    repository: opensoft/openXdox-spec
+    commit: "f088b09732e236279898b53ab9fb0f5ebc89509a"
+    path: contracts/schemas/gate-action-record.schema.yaml
+    type: release-schema
+    contract_schema_version: 1
+    sha256: "6a6cf13c76e3e6f6792cd2a4be1ed2296b24525bee800a3e9173d608e0539189"
+    release_member: true
+  # ---- never catalog members, and in no inventory (contract-v4.0's own words) ----
+  # BOTH MOVED SINCE contract-v4.0's TABLE, and by a DECLARED EDIT rather than a
+  # contract change: openXdox-spec ae59dfa ("BUILD § 3.6: correct the 4 stale
+  # citations across three arrived files in place, inside the Q-L1 declared
+  # lines") took `ideation-dashboard-snapshot` 9c44da23… -> 054259fe… and
+  # `ideation-dashboard-snapshot-index` 43acf0bb… -> 7fd9b797…. Both matched
+  # openxFactory's recorded values exactly at 481a07f9, so that table was true
+  # when it was written; it is a citation correction after it, and no RELEASE
+  # MEMBER's bytes moved (`gate-action-record` above is unchanged across the
+  # same span).
+  - id: ideation-dashboard-snapshot
+    leg: spec
+    repository: opensoft/openXdox-spec
+    commit: "f088b09732e236279898b53ab9fb0f5ebc89509a"
+    path: contracts/schemas/ideation-dashboard-snapshot.schema.yaml
+    type: release-schema
+    contract_schema_version: 1
+    sha256: "054259fe96686e3cace3269a09740b9cd8846fbc2f88e52dd0c93f8974aeab3b"
+    release_member: false
+  - id: ideation-dashboard-snapshot-index
+    leg: spec
+    repository: opensoft/openXdox-spec
+    commit: "f088b09732e236279898b53ab9fb0f5ebc89509a"
+    path: contracts/schemas/ideation-dashboard-snapshot-index.schema.yaml
+    type: release-schema
+    contract_schema_version: 1
+    sha256: "7fd9b797730e25f7a97c6acc3fb728ccce1b688643e950e7384eb0f9e9a0e296"
+    release_member: false
+  # ---- this project's own § 4.4 domain profile, authored here ----
+  # The example is listed because it SHIPS under `contracts/` and a bundle whose
+  # file list is incomplete is worse than one that names an example as an
+  # example. `type: example` is what distinguishes it; it is no member.
+  - id: domain-profile
+    leg: spec
+    repository: opensoft/openXdox-spec
+    commit: "f088b09732e236279898b53ab9fb0f5ebc89509a"
+    path: contracts/schemas/domain-profile.schema.yaml
+    type: release-schema
+    contract_schema_version: 1
+    sha256: "51c53917126e73bffb3167e22992c902c66a00c5634e9af1cefe2f61178c685a"
+    release_member: false
+  - id: domain-profile-example
+    leg: spec
+    repository: opensoft/openXdox-spec
+    commit: "f088b09732e236279898b53ab9fb0f5ebc89509a"
+    path: contracts/schemas/domain-profile.example.yaml
+    type: example
+    contract_schema_version: 1
+    sha256: "83954b27ce75497d25131a049179bf6f3b3105b123c323e3bd044c49cf4699a8"
+    release_member: false
 
 # ===========================================================================
 # CARVE PROVENANCE — the slot was declared before the carve, and the carve has
