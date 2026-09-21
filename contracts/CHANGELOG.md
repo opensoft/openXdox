@@ -1,6 +1,6 @@
 # openXdox Contract Changelog
 
-Status: draft
+Status: standard
 
 The project's release history. A bundle is `xdox-v<major>.<minor>` and is
 identified by four coordinated values: `contract_bundle_version` in
@@ -19,16 +19,31 @@ which would break on this very bundle: one member and four non-members share
 `contracts/hermes-runtime/contract-index.yaml` and is not this project's to
 assert.
 
-**`Status:` is `draft` deliberately, and it is a live question.** This entry
-lands BEFORE its tag exists — openxFactory's own lane/operator split (RULED
-ASK-9a → 1: *"the lane authors and lands the cut PR … the annotated tag is
-Brett's act"*). A `Status: standard` header in that window would assert a
-published bundle that does not exist. `opensoft/openXwallet`'s contract changelog
-does carry `Status: standard`; `openxFactory`'s carries `draft` across
-twenty-plus published releases; `docs/document-lifecycle.md` does not mention a
-changelog at all. The promotion is registered on `opensoft/openxFactory` issue
-#656 (comment 5767092136) as a question, and is a one-line change once the tag
-exists.
+**`Status: standard`, on the operator's word, with all four coordinated values
+now in place.** This entry landed BEFORE its tag existed — openxFactory's own
+lane/operator split (RULED ASK-9a → 1: *"the lane authors and lands the cut PR …
+the annotated tag is Brett's act"*) — and while the tag did not exist a
+`standard` header would have asserted a published bundle that did not, so the
+header read `draft` through that window and the promotion was registered as an
+open question on `opensoft/openxFactory` issue #656 (comment 5767092136).
+
+**That window is closed.** `xdox-v1.0` is cut and published: annotated tag object
+`2d2e9b854eb97053af905beb0ae8902887935f3a`, over `2073e3a92948b266d4e4d8063a6d4522b089cf3c`, tagger
+Brett Heap, 2026-09-21T20:59:28Z. So `contract_bundle_version` in
+[`manifest.yaml`](./manifest.yaml), that file's `entries:` rows with their
+per-file digests, the annotated tag, and the entry below now all name the same
+bundle together — which is the coordinated identity
+`opensoft/openXwallet`'s contract changelog describes and the reason it carries
+`Status: standard` too. Promoted on Brett Heap's word, verbatim 2026-09-21:
+
+> **"(a) for all four, (i) for the tag, keep going"**
+
+— item 3, recorded at [#656 comment
+5767804734](https://github.com/opensoft/openxFactory/issues/656#issuecomment-5767804734).
+`openxFactory`'s own contract changelog still carries `draft` across twenty-plus
+published releases and `docs/document-lifecycle.md` still does not mention a
+changelog; neither was ever a rule, and neither is now an argument about this
+one.
 
 ## Unreleased — 2026-09-21
 
