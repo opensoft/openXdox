@@ -85,10 +85,23 @@ digest_source: local-checkout
 # `reversible: false` is openDox's own statement, not an inference --
 # `0002_migration_state.sql` reads "openDox ships no down migration today",
 # its ledger column is `reversible boolean not null default false`, and
-# neither migration carries a down or rollback statement. `runbook` records an
-# ABSENCE honestly: no migration runbook exists in any repository of this
-# estate (`openxFactory/docs/opendox-cutover-runbook.md` is the CARVE arc and
-# does not cover the database). NOTHING READS THESE THREE FIELDS -- `migration`
+# neither migration carries a down or rollback statement. `runbook` names
+# openDox's OWN: `docs/runtime.md` in `opensoft/openDox-code` at the pinned
+# code leg `d816cf06`, titled "The openDox runtime -- a runbook", whose
+# section 5 "Migrations" states the canonical-digest and ledger rules and whose
+# section 6 "Running it" states the execution and the re-run --
+# `deploy/kubernetes/base/migration-job.yaml` points at it by name ("runbook
+# (`docs/runtime.md` section 6) states the re-run").
+#
+# CORRECTION, RECORDED RATHER THAN QUIETLY FIXED: this field first read "none
+# exists as of 2026-09-21", and that was FALSE. The search behind it matched
+# FILE NAMES only -- `docs/profile-registration-runbook.md` was the sole hit --
+# and never opened `docs/runtime.md`, whose name does not carry the word
+# "runbook" or "migration". Copilot's review of openXdox#15 caught the false
+# absence at the exact head and it was corrected in that round. The
+# openxFactory#656 answer 5767868616 that ratified the absence was given on
+# that same bad measurement; the correction is reported back to it.
+# NOTHING READS THESE THREE FIELDS -- `migration`
 # occurs 0 times in this repository's `scripts/validate-pins.py` and 0 times in
 # openxFactory's `scripts/verify-opendox-pin.py` -- so any value passes green,
 # which is exactly why it must be the honest one. Claimed at
@@ -98,7 +111,7 @@ digest_source: local-checkout
 migration:
   range: "0001..0002"
   reversible: false
-  runbook: "none exists as of 2026-09-21 - no migration runbook in any estate repository; the openDox BUILD arc owes it; registered openxFactory#656 5767868616"
+  runbook: "opensoft/openDox-code docs/runtime.md sections 5-6, at the pinned code leg d816cf06 - the Kubernetes migration Job names it for the re-run; corrected from a false absence at Copilot review of openXdox#15, reported back to openxFactory#656 5767868616"
 
 # RECORD 2 OF THREE for the openDox carve (RULED OQ-I, Brett Heap,
 # `opensoft/openxFactory#656`, 2026-09-09), written when this pin was bumped
