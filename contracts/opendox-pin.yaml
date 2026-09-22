@@ -47,19 +47,48 @@ digest_source: local-checkout
 # `neutral-product-pin` requirement's "The product digests only part of its
 # release surface" scenario asks for a per-file `sha256` for every artifact
 # openDox's OWN manifest digests per file, and `pinned_by_commit_only:` for
-# the rest. Checked directly at this commit: `opensoft/openDox`
-# `contracts/manifest.yaml` carries `contract_bundle_version: none` and
-# `entries: []` — openDox has published no contract bundle, so that set is
-# EMPTY. This is the identical fact `scripts/verify-openxdox-pin.py`
-# (openxFactory's own pin of openXdox, one link up this same chain) found for
-# ITS upstream and resolved the same way: "the whole-tree digest... discharges
-# the completeness obligation those two lists exist to serve, and discharges
-# it more strongly... ONE digest addresses EVERY byte inside it, so no member
-# can be undeclared and none can be added or altered without changing the
-# referent." Neither list is added here for that reason — a HAND ACT judgment
-# recorded for review, not a silent omission. Revisit at the first commit
-# where openDox's own `contracts/manifest.yaml` carries a non-empty `entries:`
-# row: that artifact then moves into a `files:` list here.
+# the rest.
+#
+# AMENDED 2026-09-21 — RULED by Brett Heap at `opensoft/openxFactory#656`
+# comment 5768144952, verbatim "(b) for the pin shape, keep going". THE
+# REVISIT THIS PARAGRAPH NAMED IS DUE, AND ITS ANSWER IS THAT THE LISTS ARE
+# STILL NOT OWED. Checked at THIS pin's own commit, `dc7aa08f`:
+# `opensoft/openDox` `contracts/manifest.yaml` no longer reads
+# `contract_bundle_version: none` / `entries: []` — it carries
+# `contract_bundle_version: dox-v1.0` and THREE `entries:`, every one
+# digested per file — `xfactory-workbench-chat-turn`,
+# `xfactory-workbench-model-catalog` and `ideation-workbench`, all at
+# `path: contracts/schemas/...` in `opensoft/openDox-spec` at `8fe8c4c7`.
+# So the revisit this paragraph's own closing sentence named — "the first
+# commit where openDox's own `contracts/manifest.yaml` carries a non-empty
+# `entries:` row" — was already DUE the moment this pin advanced to
+# `dc7aa08f` at `openXdox#15`, and stayed unnoticed until this amendment: a
+# gap in the record, closed here rather than quietly.
+#
+# THE CONCLUSION DOES NOT CHANGE, because the paragraph below already gave
+# the STRONGER, independent reason. This is the identical fact
+# `scripts/verify-openxdox-pin.py` (openxFactory's own pin of openXdox, one
+# link up this same chain) found for ITS upstream and resolved the same
+# way: the whole-tree `sorted-ls-tree-r-v1` digest above covers EVERY byte
+# of the pinned root tree, so no member can be undeclared and none can be
+# added or altered without changing the referent — it discharges the
+# completeness obligation those two lists exist to serve, and discharges it
+# MORE STRONGLY than an enumeration would. The three artifacts above sit in
+# openDox's SPEC leg, itself pinned by commit AND digest in openDox's own
+# `contracts/spec-pin.yaml`, so they are covered by a digest chain end to
+# end and an enumeration here would add a second, weaker statement of the
+# same fact — one that could drift. Neither list is added here for that
+# reason — a HAND ACT judgment recorded for review, not a silent omission,
+# now RESOLVED rather than merely held pending a revisit that has already
+# passed.
+#
+# openxFactory's own direct `contracts/opendox-pin.yaml` makes the
+# IDENTICAL amendment at `opensoft/openxFactory#1134` (same ruling, same
+# comment `5768144952`): both pins name openDox at the same
+# trigger-crossing commit, so both reach the same resolution. It did not
+# come with `openXdox#15` because the claim posted as `5767868394` was an
+# earlier draft that lacked this finding — a gap in the record, stated
+# rather than quietly closed.
 
 # MIGRATION DECLARATION — MODIFIED `neutral-product-pin` requirement, "A pin
 # bump crosses a migration" scenario (`split-opendox-two-layer-product`
