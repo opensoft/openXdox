@@ -45,10 +45,18 @@ published releases and `docs/document-lifecycle.md` still does not mention a
 changelog; neither was ever a rule, and neither is now an argument about this
 one.
 
-## Unreleased — 2026-09-21
+## Unreleased — 2026-09-23
 
-Nothing pending. Both legs' `main` are exactly the commits this bundle pins:
-`openXdox-code` `ab04453d` and `openXdox-spec` `f088b097`.
+**The code leg advances `ab04453d` → `195276b7`**, `opensoft/openXdox-code`
+#26: `DISPLAY`, the xFactory host's label **"implemented"** for openDox's
+`completion` stage, RULED at `opensoft/openxFactory` #656 comment `5784683830`
+(verbatim *"1, keep completed and overlay implemented"*). **No contract byte
+moves.** The code leg carries no `contracts/` path at either commit (measured
+with `git ls-tree -r`), so it contributes no `entries:` row, and the spec leg is
+unchanged at `f088b097`. This cuts no bundle: `xdox-v1.0` keeps the two legs it
+was cut over (`ab04453d`, `f088b097`). Both legs' `main` are again exactly the
+commits this root pins: `openXdox-code` `195276b7` and `openXdox-spec`
+`f088b097`.
 
 ## xdox-v1.0 — 2026-09-21 (the first bundle: openXdox's contract surface is the carved spec leg's five files — one openxFactory catalog release member, three non-member schemas and one example)
 
