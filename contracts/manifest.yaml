@@ -75,7 +75,7 @@ contract_bundle_version: xdox-v1.0
 # that leg and not an omission. RE-MEASURED the same way at each code leg this
 # root has pinned since: 195276b75358d2f4d1f0b3eb17b8b62a3c01c409
 # (`opensoft/openXdox-code` #26, the `DISPLAY` facet) and
-# 39d8937e483d21683fd2464297823e12d1088a5a (#27, that facet's item nouns), the
+# 626f2c8d55a8a32111863e55c82599c5c1a88e69 (#27, that facet's item nouns), the
 # leg this root pins from this commit forward. Neither carries a `contracts/`
 # path, so the code leg still contributes no entry and none of the five rows
 # below moves. `xdox-v1.0` keeps `ab04453d`, the leg it was cut over; neither

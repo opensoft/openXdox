@@ -21,7 +21,7 @@ leg_role: code
 source_repository: opensoft/openXdox-code
 submodule_path: code
 
-commit: "39d8937e483d21683fd2464297823e12d1088a5a"
+commit: "626f2c8d55a8a32111863e55c82599c5c1a88e69"
 revision_kind: commit
 
 digest_algorithm: sha256
