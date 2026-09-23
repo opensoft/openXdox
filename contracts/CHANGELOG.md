@@ -47,16 +47,22 @@ one.
 
 ## Unreleased — 2026-09-23
 
-**The code leg advances `ab04453d` → `195276b7`**, `opensoft/openXdox-code`
-#26: `DISPLAY`, the xFactory host's label **"implemented"** for openDox's
-`completion` stage, RULED at `opensoft/openxFactory` #656 comment `5784683830`
-(verbatim *"1, keep completed and overlay implemented"*). **No contract byte
-moves.** The code leg carries no `contracts/` path at either commit (measured
-with `git ls-tree -r`), so it contributes no `entries:` row, and the spec leg is
-unchanged at `f088b097`. This cuts no bundle: `xdox-v1.0` keeps the two legs it
-was cut over (`ab04453d`, `f088b097`). Both legs' `main` are again exactly the
-commits this root pins: `openXdox-code` `195276b7` and `openXdox-spec`
-`f088b097`.
+**The code leg advances `ab04453d` → `195276b7` → `626f2c8d`**, both on
+`opensoft/openXdox-code`'s `DISPLAY` facet for openDox's `completion` stage:
+
+- `195276b7`, #26: the xFactory host's label **"implemented"**, RULED at
+  `opensoft/openxFactory` #656 comment `5784683830` (verbatim *"1, keep
+  completed and overlay implemented"*).
+- `626f2c8d`, #27: the same stage's item nouns, **"implemented item"** and
+  **"implemented items"**, RULED at #656 comment `5801057769` (verbatim *"yes,
+  overlay implemented items too"*).
+
+**No contract byte moves.** The code leg carries no `contracts/` path at any of
+the three commits (measured with `git ls-tree -r`), so it contributes no
+`entries:` row, and the spec leg is unchanged at `f088b097`. This cuts no
+bundle: `xdox-v1.0` keeps the two legs it was cut over (`ab04453d`,
+`f088b097`). Both legs' `main` are again exactly the commits this root pins:
+`openXdox-code` `626f2c8d` and `openXdox-spec` `f088b097`.
 
 ## xdox-v1.0 — 2026-09-21 (the first bundle: openXdox's contract surface is the carved spec leg's five files — one openxFactory catalog release member, three non-member schemas and one example)
 
