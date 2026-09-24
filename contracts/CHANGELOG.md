@@ -47,8 +47,9 @@ one.
 
 ## Unreleased — 2026-09-23
 
-**The code leg advances `ab04453d` → `195276b7` → `626f2c8d`**, both on
-`opensoft/openXdox-code`'s `DISPLAY` facet for openDox's `completion` stage:
+**The code leg advances `ab04453d` → `195276b7` → `626f2c8d` → `e28930bf`.** The
+first two are on `opensoft/openXdox-code`'s `DISPLAY` facet for openDox's
+`completion` stage. The third repairs the leg's own snapshot validation:
 
 - `195276b7`, #26: the xFactory host's label **"implemented"**, RULED at
   `opensoft/openxFactory` #656 comment `5784683830` (verbatim *"1, keep
@@ -56,13 +57,23 @@ one.
 - `626f2c8d`, #27: the same stage's item nouns, **"implemented item"** and
   **"implemented items"**, RULED at #656 comment `5801057769` (verbatim *"yes,
   overlay implemented items too"*).
+- `e28930bf`, #28 (2026-09-24): the snapshot validator and its schemas resolve
+  in this product's own tree. This is `split-opendox-two-layer-product` § 8.9
+  residue (i)–(iii), RULED at #656 comment `5815412869` (C3, all (a)), and it
+  landed after openxFactory#1153 declared its carve window.
+  - The validator reads its own `contracts/` or the directory `CONTRACTS_DIR`
+    names.
+  - `find_validator` no longer adopts an enclosing checkout.
+  - This root's `Makefile` does not export `CONTRACTS_DIR`. Q-XDV1 (a) leaves
+    that export to openRepoShape, so in this assembly root the validator still
+    refuses by default, naming the variable.
 
 **No contract byte moves.** The code leg carries no `contracts/` path at any of
-the three commits (measured with `git ls-tree -r`), so it contributes no
+the four commits (measured with `git ls-tree -r`), so it contributes no
 `entries:` row, and the spec leg is unchanged at `f088b097`. This cuts no
 bundle: `xdox-v1.0` keeps the two legs it was cut over (`ab04453d`,
 `f088b097`). Both legs' `main` are again exactly the commits this root pins:
-`openXdox-code` `626f2c8d` and `openXdox-spec` `f088b097`.
+`openXdox-code` `e28930bf` and `openXdox-spec` `f088b097`.
 
 ## xdox-v1.0 — 2026-09-21 (the first bundle: openXdox's contract surface is the carved spec leg's five files — one openxFactory catalog release member, three non-member schemas and one example)
 
