@@ -69,8 +69,8 @@ validation. The fourth is plan 034's phase 1 at the leg:
     that export to openRepoShape, so in this assembly root the validator still
     refuses by default, naming the variable.
 - `6158151e` (2026-09-28): five squash landings of plan 034's phase 1 (plan
-  034 T047, T090 step 5), all on the `add-neutral-product-standalone-operability`
-  arc:
+  034 T047, T090 step 5), all on the `neutral-product-standalone-operability`
+  arc, the `Arc:` trailer each one carries:
   - #29, T040: the carve residue cleared, and `rfc3339-validator` declared;
   - #30, T041: the declared exclusion, each file held to its reason;
   - #31, T042: `tests/integration/` at the declared composition;
@@ -80,7 +80,8 @@ validation. The fourth is plan 034's phase 1 at the leg:
 **The openDox pin advances `dc7aa08f` → `663ac683`** (2026-09-28), in the same
 pull request as the code leg. `663ac683` is openDox's root `main` after
 `opensoft/openDox` #13 (plan 034 T039), which advances openDox's code leg
-`d816cf06` → `2d116415` and moves nothing else. `dox-v1.0` still tags
+`d816cf06` → `2d116415`, with its own `contracts/code-pin.yaml` and
+`contracts/CHANGELOG.md`, and changes no other path. `dox-v1.0` still tags
 `dc7aa08f`, an ancestor, and openDox's `contracts/manifest.yaml` is
 byte-unchanged between the two, so no openDox bundle moves. Of the migration
 triple, `range` (`0001..0002`) and `reversible` (`false`) are unchanged at

@@ -90,7 +90,8 @@ contract_bundle_version: xdox-v1.0
 # domain descendant of openDox and pins it at `contracts/opendox-pin.yaml`,
 # commit 663ac683c04c67007eaef24006f0854a650069ea, openDox's root `main` after
 # `opensoft/openDox` #13 (plan 034 T039). That root advances openDox's code
-# leg `d816cf06` -> `2d116415` and moves nothing else: openDox's
+# leg `d816cf06` -> `2d116415`, with its own `contracts/code-pin.yaml` and
+# `contracts/CHANGELOG.md`, and moves no bundle byte: openDox's
 # `contracts/manifest.yaml`, its `spec` gitlink and `contracts/spec-pin.yaml`
 # are byte-unchanged from dc7aa08fe48c8d17b596b0daa1ce87cdc0472aca, the commit
 # `dox-v1.0` tags, which is its ancestor. So the pin now names a DESCENDANT of
