@@ -31,13 +31,13 @@ product: openDox
 source_repository: opensoft/openDox
 materialization: referenced
 
-commit: "dc7aa08fe48c8d17b596b0daa1ce87cdc0472aca"
+commit: "663ac683c04c67007eaef24006f0854a650069ea"
 revision_kind: commit
 
 digest_algorithm: sha256
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "adc049c973298e44064187aa91cd5c987aec1b911ebb8dea607648c9ae7f7cee"
+  tree_sha256: "ec8266039f2be6988726ed2d6e78657f1e7e4919ea55d290a2825f1e22359d5d"
 
 # How the digest above was read, so a later reader knows whether it came from
 # a clone on this machine or from the forge's own tree listing.
@@ -52,7 +52,7 @@ digest_source: local-checkout
 # AMENDED 2026-09-21 — RULED by Brett Heap at `opensoft/openxFactory#656`
 # comment 5768144952, verbatim "(b) for the pin shape, keep going". THE
 # REVISIT THIS PARAGRAPH NAMED IS DUE, AND ITS ANSWER IS THAT THE LISTS ARE
-# STILL NOT OWED. Checked at THIS pin's own commit, `dc7aa08f`:
+# STILL NOT OWED. Checked at `dc7aa08f`, and unchanged at `663ac683`:
 # `opensoft/openDox` `contracts/manifest.yaml` no longer reads
 # `contract_bundle_version: none` / `entries: []` — it carries
 # `contract_bundle_version: dox-v1.0` and THREE `entries:`, every one
@@ -140,7 +140,7 @@ digest_source: local-checkout
 migration:
   range: "0001..0002"
   reversible: false
-  runbook: "opensoft/openDox-code docs/runtime.md sections 5-6, at the pinned code leg d816cf06 - the Kubernetes migration Job names it for the re-run; corrected from a false absence at Copilot review of openXdox#15, reported back to openxFactory#656 5767868616"
+  runbook: "opensoft/openDox-code docs/runtime.md sections 5-6, at the pinned code leg 2d116415 - the Kubernetes migration Job names it for the re-run; corrected from a false absence at Copilot review of openXdox#15, reported back to openxFactory#656 5767868616"
 
 # RECORD 2 OF THREE for the openDox carve (RULED OQ-I, Brett Heap,
 # `opensoft/openxFactory#656`, 2026-09-09), written when this pin was bumped

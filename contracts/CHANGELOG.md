@@ -47,9 +47,10 @@ one.
 
 ## Unreleased — 2026-09-23
 
-**The code leg advances `ab04453d` → `195276b7` → `626f2c8d` → `e28930bf`.** The
-first two are on `opensoft/openXdox-code`'s `DISPLAY` facet for openDox's
-`completion` stage. The third repairs the leg's own snapshot validation:
+**The code leg advances `ab04453d` → `195276b7` → `626f2c8d` → `e28930bf` →
+`4610bca5`.** The first two are on `opensoft/openXdox-code`'s `DISPLAY` facet
+for openDox's `completion` stage. The third repairs the leg's own snapshot
+validation. The fourth is plan 034's phase 1 at the leg:
 
 - `195276b7`, #26: the xFactory host's label **"implemented"**, RULED at
   `opensoft/openxFactory` #656 comment `5784683830` (verbatim *"1, keep
@@ -67,13 +68,30 @@ first two are on `opensoft/openXdox-code`'s `DISPLAY` facet for openDox's
   - This root's `Makefile` does not export `CONTRACTS_DIR`. Q-XDV1 (a) leaves
     that export to openRepoShape, so in this assembly root the validator still
     refuses by default, naming the variable.
+- `4610bca5` (2026-09-28): four squash landings of plan 034's phase 1 (plan
+  034 T047, T090 step 5), all on the `add-neutral-product-standalone-operability`
+  arc:
+  - #29, T040: the carve residue cleared, and `rfc3339-validator` declared;
+  - #30, T041: the declared exclusion, each file held to its reason;
+  - #31, T042: `tests/integration/` at the declared composition;
+  - #32, T043: the required check runs the whole suite, less the exclusion.
+
+**The openDox pin advances `dc7aa08f` → `663ac683`** (2026-09-28), in the same
+commit as `4610bca5`. `663ac683` is openDox's root `main` after
+`opensoft/openDox` #13 (plan 034 T039), which advances openDox's code leg
+`d816cf06` → `2d116415` and moves nothing else. `dox-v1.0` still tags
+`dc7aa08f`, an ancestor, and openDox's `contracts/manifest.yaml` is
+byte-unchanged between the two, so no openDox bundle moves. Of the migration
+triple, `range` (`0001..0002`) and `reversible` (`false`) are unchanged at
+`2d116415`: its `migrations/` directory holds the same two files. `runbook`
+names the new code leg, where `docs/runtime.md` sections 5-6 still hold.
 
 **No contract byte moves.** The code leg carries no `contracts/` path at any of
-the four commits (measured with `git ls-tree -r`), so it contributes no
+the five commits (measured with `git ls-tree -r`), so it contributes no
 `entries:` row, and the spec leg is unchanged at `f088b097`. This cuts no
 bundle: `xdox-v1.0` keeps the two legs it was cut over (`ab04453d`,
 `f088b097`). Both legs' `main` are again exactly the commits this root pins:
-`openXdox-code` `e28930bf` and `openXdox-spec` `f088b097`.
+`openXdox-code` `4610bca5` and `openXdox-spec` `f088b097`.
 
 ## xdox-v1.0 — 2026-09-21 (the first bundle: openXdox's contract surface is the carved spec leg's five files — one openxFactory catalog release member, three non-member schemas and one example)
 
