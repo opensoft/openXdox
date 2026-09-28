@@ -48,7 +48,7 @@ one.
 ## Unreleased — 2026-09-23
 
 **The code leg advances `ab04453d` → `195276b7` → `626f2c8d` → `e28930bf` →
-`4610bca5`.** The first two are on `opensoft/openXdox-code`'s `DISPLAY` facet
+`6158151e`.** The first two are on `opensoft/openXdox-code`'s `DISPLAY` facet
 for openDox's `completion` stage. The third repairs the leg's own snapshot
 validation. The fourth is plan 034's phase 1 at the leg:
 
@@ -68,16 +68,17 @@ validation. The fourth is plan 034's phase 1 at the leg:
   - This root's `Makefile` does not export `CONTRACTS_DIR`. Q-XDV1 (a) leaves
     that export to openRepoShape, so in this assembly root the validator still
     refuses by default, naming the variable.
-- `4610bca5` (2026-09-28): four squash landings of plan 034's phase 1 (plan
+- `6158151e` (2026-09-28): five squash landings of plan 034's phase 1 (plan
   034 T047, T090 step 5), all on the `add-neutral-product-standalone-operability`
   arc:
   - #29, T040: the carve residue cleared, and `rfc3339-validator` declared;
   - #30, T041: the declared exclusion, each file held to its reason;
   - #31, T042: `tests/integration/` at the declared composition;
-  - #32, T043: the required check runs the whole suite, less the exclusion.
+  - #32, T043: the required check runs the whole suite, less the exclusion;
+  - #33, T044: the six `doc_health` skips assert for real, in a declared file.
 
 **The openDox pin advances `dc7aa08f` → `663ac683`** (2026-09-28), in the same
-commit as `4610bca5`. `663ac683` is openDox's root `main` after
+pull request as the code leg. `663ac683` is openDox's root `main` after
 `opensoft/openDox` #13 (plan 034 T039), which advances openDox's code leg
 `d816cf06` → `2d116415` and moves nothing else. `dox-v1.0` still tags
 `dc7aa08f`, an ancestor, and openDox's `contracts/manifest.yaml` is
@@ -91,7 +92,7 @@ the five commits (measured with `git ls-tree -r`), so it contributes no
 `entries:` row, and the spec leg is unchanged at `f088b097`. This cuts no
 bundle: `xdox-v1.0` keeps the two legs it was cut over (`ab04453d`,
 `f088b097`). Both legs' `main` are again exactly the commits this root pins:
-`openXdox-code` `4610bca5` and `openXdox-spec` `f088b097`.
+`openXdox-code` `6158151e` and `openXdox-spec` `f088b097`.
 
 ## xdox-v1.0 — 2026-09-21 (the first bundle: openXdox's contract surface is the carved spec leg's five files — one openxFactory catalog release member, three non-member schemas and one example)
 

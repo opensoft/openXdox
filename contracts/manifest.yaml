@@ -78,12 +78,13 @@ contract_bundle_version: xdox-v1.0
 # 626f2c8d55a8a32111863e55c82599c5c1a88e69 (#27, that facet's item nouns),
 # e28930bf052febff0c7bdd0463a72ce3c4f5e8fe (#28, the snapshot validator's
 # `split-opendox-two-layer-product` § 8.9 residue) and
-# 4610bca5f6dd462936d54687499165715e04d73a (#29-#32, plan 034 T040-T043: the
-# carve residue, the declared exclusion, `tests/integration/` and the whole
-# suite in the required check), the leg this root pins from this commit
-# forward. None carries a `contracts/` path, so the code leg still contributes
-# no entry and none of the five rows below moves. `xdox-v1.0` keeps
-# `ab04453d`, the leg it was cut over; no advance cuts a bundle.
+# 6158151e7f5202e1894f13365702daedca88cc26 (#29-#33, plan 034 T040-T044: the
+# carve residue, the declared exclusion, `tests/integration/`, the whole suite
+# in the required check, and the six `doc_health` skips asserting for real),
+# the leg this root pins from this commit forward. None carries a `contracts/`
+# path, so the code leg still contributes no entry and none of the five rows
+# below moves. `xdox-v1.0` keeps `ab04453d`, the leg it was cut over; no
+# advance cuts a bundle.
 #
 # WHAT THIS BUNDLE DEPENDS ON, STATED BECAUSE IT IS NOT OBVIOUS. openXdox is a
 # domain descendant of openDox and pins it at `contracts/opendox-pin.yaml`,
