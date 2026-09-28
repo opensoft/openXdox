@@ -80,8 +80,9 @@ validation. The fourth is plan 034's phase 1 at the leg:
 **The openDox pin advances `dc7aa08f` → `663ac683`** (2026-09-28), in the same
 pull request as the code leg. `663ac683` is openDox's root `main` after
 `opensoft/openDox` #13 (plan 034 T039), which advances openDox's code leg
-`d816cf06` → `2d116415`, with its own `contracts/code-pin.yaml` and
-`contracts/CHANGELOG.md`, and changes no other path. `dox-v1.0` still tags
+`d816cf06` → `2d116415` with its `contracts/code-pin.yaml` and changes no
+other path. The one other commit since `dc7aa08f`, `opensoft/openDox` #12,
+changes only `contracts/CHANGELOG.md`. `dox-v1.0` still tags
 `dc7aa08f`, an ancestor, and openDox's `contracts/manifest.yaml` is
 byte-unchanged between the two, so no openDox bundle moves. Of the migration
 triple, `range` (`0001..0002`) and `reversible` (`false`) are unchanged at
