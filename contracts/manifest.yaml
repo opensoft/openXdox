@@ -77,28 +77,54 @@ contract_bundle_version: xdox-v1.0
 # (`opensoft/openXdox-code` #26, the `DISPLAY` facet),
 # 626f2c8d55a8a32111863e55c82599c5c1a88e69 (#27, that facet's item nouns),
 # e28930bf052febff0c7bdd0463a72ce3c4f5e8fe (#28, the snapshot validator's
-# `split-opendox-two-layer-product` § 8.9 residue) and
+# `split-opendox-two-layer-product` § 8.9 residue),
 # 6158151e7f5202e1894f13365702daedca88cc26 (#29-#33, plan 034 T040-T044: the
 # carve residue, the declared exclusion, `tests/integration/`, the whole suite
-# in the required check, and the six `doc_health` skips asserting for real),
-# the leg this root pins from this commit forward. None carries a `contracts/`
-# path, so the code leg still contributes no entry and none of the five rows
-# below moves. `xdox-v1.0` keeps `ab04453d`, the leg it was cut over; no
-# advance cuts a bundle.
+# in the required check, and the six `doc_health` skips asserting for real)
+# and 6a3b93b93cd647ea0c62aa7bb5cdff529a2c35e8 (#34-#36, plan 034 T060, T059
+# and T061: the facet's governed `values`, the governed generator, registry
+# and source through openDox's seams, and the consumer's validator located
+# through the installed distribution), the leg this root pins from this commit
+# forward. Through `6158151e` none carries a `contracts/` path. From
+# `6a3b93b9` the leg packages COPIES of three of the spec leg's schemas under
+# `src/openxdox/contracts/schemas/` (`gate-action-record`,
+# `ideation-dashboard-snapshot`, `ideation-dashboard-snapshot-index`), each
+# byte-identical (sha256) to its row below and recorded by
+# `src/openxdox/contracts/copies.yaml` against spec `f088b097`. They are the
+# spec leg's bytes, not a contract of the code leg's own, so the code leg still
+# contributes no entry and none of the five rows below moves. `xdox-v1.0` keeps
+# `ab04453d`, the leg it was cut over; no advance cuts a bundle.
 #
 # WHAT THIS BUNDLE DEPENDS ON, STATED BECAUSE IT IS NOT OBVIOUS. openXdox is a
 # domain descendant of openDox and pins it at `contracts/opendox-pin.yaml`,
-# commit 663ac683c04c67007eaef24006f0854a650069ea, openDox's root `main` after
+# commit d5098297a5c262f9977193305210bccb4ec51e89, openDox's root `main` after
+# `opensoft/openDox` #16 (plan 034 T062). Three commits lie between it and the
+# pin it replaces, `663ac683`:
+# - `opensoft/openDox` #14 (`52005213`, T053) cuts openDox's `dox-v1.1`: the
+#   `spec` gitlink `8fe8c4c7` -> `f7ee3c76` with its `contracts/spec-pin.yaml`,
+#   and `contracts/manifest.yaml` `dox-v1.0` -> `dox-v1.1`, which adds a fourth
+#   entry, `opendox-snapshot`. The annotated tag `dox-v1.1` (`851a28e9`) is
+#   over `52005213`, an ancestor of `d5098297`.
+# - #15 changes only `contracts/CHANGELOG.md` (the `dox-v1.1` entry's Status).
+# - #16 advances openDox's code leg `2d116415` -> `047bb4fa` with its
+#   `contracts/code-pin.yaml`.
+# So the pin now names a DESCENDANT of the root `dox-v1.1` tags, and the openDox
+# bundle this one composes over is `dox-v1.1`. None of this bundle's five rows
+# names an openDox path, so none moves. THE PIN ADVANCES `663ac683` ->
+# `d5098297` AT THIS COMMIT, in the same commit as the code leg (plan 034 T064,
+# T090 step 5).
+#
+# IT ADVANCED TO `663ac683` at `opensoft/openXdox` #20, the root `main` after
 # `opensoft/openDox` #13 (plan 034 T039). That root advances openDox's code
 # leg `d816cf06` -> `2d116415` with its `contracts/code-pin.yaml`, and moves
 # no bundle byte: openDox's `contracts/manifest.yaml`, its `spec` gitlink and
 # `contracts/spec-pin.yaml` are byte-unchanged from
 # dc7aa08fe48c8d17b596b0daa1ce87cdc0472aca, the commit `dox-v1.0` tags, which
 # is its ancestor; the one other commit between them, `opensoft/openDox` #12,
-# changes only `contracts/CHANGELOG.md`. So the pin now names a DESCENDANT of
-# the tagged root, and no openDox bundle moves. THE PIN ADVANCES
-# `dc7aa08f` -> `663ac683` AT THIS COMMIT, in the same commit as the code leg
-# (plan 034 T047, T090 step 5).
+# changes only `contracts/CHANGELOG.md`. So the pin then named a DESCENDANT
+# of the tagged root, and no openDox bundle moved. The pin advanced
+# `dc7aa08f` -> `663ac683` there, in the same commit as the code leg (plan 034
+# T047, T090 step 5).
 #
 # IT FIRST ADVANCED TO `dc7aa08f` at `opensoft/openXdox` #15, on the forced
 # order the holder set (`opensoft/openxFactory#656` comment 5767733963) and
@@ -115,8 +141,8 @@ contract_bundle_version: xdox-v1.0
 # 5767804734 item 5 leaves it exactly where it was cut — no re-cut. So
 # `xdox-v1.0` composes over `c4c5014d` and NOT over the openDox root that
 # `dox-v1.0` tags; it is `main` that composes over the pinned root: `dc7aa08f`
-# from #15, and `663ac683` from this commit forward. Those two statements are
-# about different objects and both hold.
+# from #15, `663ac683` from #20, and `d5098297` from this commit forward. Those
+# two statements are about different objects and both hold.
 #
 # ADVANCING THIS PIN IS A THREE-REPOSITORY LOCKSTEP, AND ONLY ONE LEG OF IT IS
 # TAKEN HERE: openxFactory's `openDox` gitlink, openxFactory's
@@ -124,10 +150,10 @@ contract_bundle_version: xdox-v1.0
 # `contracts/opendox-pin.yaml`, which `verify-opendox-pin.py` check 5 reads as a
 # BLOB at whatever commit openxFactory's `openXdox` gitlink names. This commit
 # moves the THIRD only. openxFactory's `openXdox` gitlink still records
-# `069fe471`, whose blob names `dc7aa08f`, so check 5 goes on reading the OLD
+# `57e2b8f2`, whose blob names `663ac683`, so check 5 goes on reading the OLD
 # blob and openxFactory stays in agreement with itself until its own two pairs
-# advance together (plan 034 T047's openxFactory PR). At #15 the same gitlink
-# recorded `88a1047e`.
+# advance together (plan 034 T064's openxFactory PR). At #20 the same gitlink
+# recorded `069fe471`, and at #15 `88a1047e`.
 # ===========================================================================
 
 entries:

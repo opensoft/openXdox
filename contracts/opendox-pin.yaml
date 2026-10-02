@@ -52,13 +52,13 @@ digest_source: local-checkout
 # AMENDED 2026-09-21 — RULED by Brett Heap at `opensoft/openxFactory#656`
 # comment 5768144952, verbatim "(b) for the pin shape, keep going". THE
 # REVISIT THIS PARAGRAPH NAMED IS DUE, AND ITS ANSWER IS THAT THE LISTS ARE
-# STILL NOT OWED. Checked at `dc7aa08f`, and unchanged at `663ac683`:
-# `opensoft/openDox` `contracts/manifest.yaml` no longer reads
-# `contract_bundle_version: none` / `entries: []` — it carries
-# `contract_bundle_version: dox-v1.0` and THREE `entries:`, every one
-# digested per file — `xfactory-workbench-chat-turn`,
-# `xfactory-workbench-model-catalog` and `ideation-workbench`, all at
-# `path: contracts/schemas/...` in `opensoft/openDox-spec` at `8fe8c4c7`.
+# STILL NOT OWED. Checked at `dc7aa08f`, unchanged at `663ac683`, and checked
+# again at `d5098297`: `opensoft/openDox` `contracts/manifest.yaml` no longer
+# reads `contract_bundle_version: none` / `entries: []`. It carried `dox-v1.0`
+# and THREE `entries:` at the first two, and at `d5098297` it carries `dox-v1.1`
+# and FOUR, every one digested per file — `xfactory-workbench-chat-turn`,
+# `xfactory-workbench-model-catalog`, `ideation-workbench` and `opendox-snapshot`,
+# all at `path: contracts/schemas/...` in `opensoft/openDox-spec` at `f7ee3c76`.
 # So the revisit this paragraph's own closing sentence named — "the first
 # commit where openDox's own `contracts/manifest.yaml` carries a non-empty
 # `entries:` row" — was already DUE the moment this pin advanced to
@@ -73,7 +73,7 @@ digest_source: local-checkout
 # of the pinned root tree, so no member can be undeclared and none can be
 # added or altered without changing the referent — it discharges the
 # completeness obligation those two lists exist to serve, and discharges it
-# MORE STRONGLY than an enumeration would. The three artifacts above sit in
+# MORE STRONGLY than an enumeration would. The four artifacts above sit in
 # openDox's SPEC leg, itself pinned by commit AND digest in openDox's own
 # `contracts/spec-pin.yaml`, so they are covered by a digest chain end to
 # end and an enumeration here would add a second, weaker statement of the
