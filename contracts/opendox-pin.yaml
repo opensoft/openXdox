@@ -31,13 +31,13 @@ product: openDox
 source_repository: opensoft/openDox
 materialization: referenced
 
-commit: "663ac683c04c67007eaef24006f0854a650069ea"
+commit: "d5098297a5c262f9977193305210bccb4ec51e89"
 revision_kind: commit
 
 digest_algorithm: sha256
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "ec8266039f2be6988726ed2d6e78657f1e7e4919ea55d290a2825f1e22359d5d"
+  tree_sha256: "2815ca2353d1cd4c220b5391e1c0bc45c2cabfec9aa196cee1e0a4bcc9e857cc"
 
 # How the digest above was read, so a later reader knows whether it came from
 # a clone on this machine or from the forge's own tree listing.
@@ -140,7 +140,7 @@ digest_source: local-checkout
 migration:
   range: "0001..0002"
   reversible: false
-  runbook: "opensoft/openDox-code docs/runtime.md sections 5-6, at the pinned code leg 2d116415 - the Kubernetes migration Job names it for the re-run; corrected from a false absence at Copilot review of openXdox#15, reported back to openxFactory#656 5767868616"
+  runbook: "opensoft/openDox-code docs/runtime.md sections 5-6, at the pinned code leg 047bb4fa - the Kubernetes migration Job names it for the re-run; corrected from a false absence at Copilot review of openXdox#15, reported back to openxFactory#656 5767868616"
 
 # RECORD 2 OF THREE for the openDox carve (RULED OQ-I, Brett Heap,
 # `opensoft/openxFactory#656`, 2026-09-09), written when this pin was bumped
