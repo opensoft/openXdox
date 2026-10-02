@@ -109,10 +109,10 @@ contract_bundle_version: xdox-v1.0
 # - #16 advances openDox's code leg `2d116415` -> `047bb4fa` with its
 #   `contracts/code-pin.yaml`.
 # So the pin now names a DESCENDANT of the root tagged by `dox-v1.1`, and the
-# openDox bundle this one composes over is `dox-v1.1`. None of this bundle's five rows
-# names an openDox path, so none moves. THE PIN ADVANCES `663ac683` ->
-# `d5098297` AT THIS COMMIT, in the same commit as the code leg (plan 034 T064,
-# T090 step 5).
+# openDox bundle this one composes over is `dox-v1.1`. None of this bundle's
+# five rows names an openDox path, so none moves. THE PIN ADVANCES `663ac683`
+# -> `d5098297` AT THIS COMMIT, in the same commit as the code leg (plan 034
+# T064, T090 step 5).
 #
 # IT ADVANCED TO `663ac683` at `opensoft/openXdox` #20, the root `main` after
 # `opensoft/openDox` #13 (plan 034 T039). That root advances openDox's code
