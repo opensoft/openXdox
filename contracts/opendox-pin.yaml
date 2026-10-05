@@ -31,13 +31,13 @@ product: openDox
 source_repository: opensoft/openDox
 materialization: referenced
 
-commit: "d5098297a5c262f9977193305210bccb4ec51e89"
+commit: "e1e3a3c3f8dd38214510412b71a2e858c6179532"
 revision_kind: commit
 
 digest_algorithm: sha256
 digest_definition: sorted-ls-tree-r-v1
 digests:
-  tree_sha256: "2815ca2353d1cd4c220b5391e1c0bc45c2cabfec9aa196cee1e0a4bcc9e857cc"
+  tree_sha256: "55a110f49d268e22d382d47d778dfaf9298c93b555e3c4fcb621afc99f9d011b"
 
 # How the digest above was read, so a later reader knows whether it came from
 # a clone on this machine or from the forge's own tree listing.
@@ -52,10 +52,10 @@ digest_source: local-checkout
 # AMENDED 2026-09-21 — RULED by Brett Heap at `opensoft/openxFactory#656`
 # comment 5768144952, verbatim "(b) for the pin shape, keep going". THE
 # REVISIT THIS PARAGRAPH NAMED IS DUE, AND ITS ANSWER IS THAT THE LISTS ARE
-# STILL NOT OWED. Checked at `dc7aa08f`, unchanged at `663ac683`, and checked
-# again at `d5098297`: `opensoft/openDox` `contracts/manifest.yaml` no longer
-# reads `contract_bundle_version: none` / `entries: []`. It carried `dox-v1.0`
-# and THREE `entries:` at the first two, and at `d5098297` it carries `dox-v1.1`
+# STILL NOT OWED. Checked at `dc7aa08f`, unchanged at `663ac683`, checked at
+# `d5098297`, unchanged at `e1e3a3c3`: openDox's `contracts/manifest.yaml` no
+# longer reads `contract_bundle_version: none` / `entries: []`. It carried
+# `dox-v1.0` and THREE `entries:` at the first two, and carries `dox-v1.1`
 # and FOUR, every one digested per file — `xfactory-workbench-chat-turn`,
 # `xfactory-workbench-model-catalog`, `ideation-workbench` and `opendox-snapshot`,
 # all at `path: contracts/schemas/...` in `opensoft/openDox-spec` at `f7ee3c76`.
@@ -140,7 +140,7 @@ digest_source: local-checkout
 migration:
   range: "0001..0002"
   reversible: false
-  runbook: "opensoft/openDox-code docs/runtime.md sections 5-6, at the pinned code leg 047bb4fa - the Kubernetes migration Job names it for the re-run; corrected from a false absence at Copilot review of openXdox#15, reported back to openxFactory#656 5767868616"
+  runbook: "opensoft/openDox-code docs/runtime.md sections 5-6, at the pinned code leg dede32b4 - the Kubernetes migration Job names it for the re-run; corrected from a false absence at Copilot review of openXdox#15, reported back to openxFactory#656 5767868616"
 
 # RECORD 2 OF THREE for the openDox carve (RULED OQ-I, Brett Heap,
 # `opensoft/openxFactory#656`, 2026-09-09), written when this pin was bumped
